@@ -5,23 +5,22 @@ import(
 )
 
 func DBinsert(){
-	var username,departname,created string
-	var userid int
+
 	fmt.Println("请输入用户ID：")
-	fmt.Scan(&userid)
+	fmt.Scan(&Userid)
 	fmt.Println("请输入名字：")
-	fmt.Scan(&username)
+	fmt.Scan(&Username)
 	fmt.Println("请输入部门：")
-	fmt.Scan(&departname)
+	fmt.Scan(&Departname)
 	fmt.Println("请输入进部门时间")
-	fmt.Scan(&created)
+	fmt.Scan(&Created)
 
 
 	//插入数据
 	stmt,err := db.Prepare("INSERT userif SET userid=?,username=?,departname=?,created=?")
 	CheckErr(err)
 
-	res,err := stmt.Exec(userid,username,departname,created)
+	res,err := stmt.Exec(Userid,Username,Departname,Created)
 	CheckErr(err)
 
 	id,err := res.LastInsertId()

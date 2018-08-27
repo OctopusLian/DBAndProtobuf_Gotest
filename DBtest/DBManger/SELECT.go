@@ -2,21 +2,23 @@ package DBManger
 
 import "fmt"
 
-func DBselect(userid int){
+func DBselect(){
 	//查询数据
 	rows,err := db.Query("SELECT * FROM userif")
 	CheckErr(err)
 
 	for rows.Next(){
+		/*
 		var userid int
 		var username string
 		var departname string
 		var created string
-		err = rows.Scan(&userid,&username,&departname,&created)
+		*/
+		err = rows.Scan(&Id,&Userid,&Created,&Departname,&Username)
 		CheckErr(err)
-		fmt.Println(userid)
-		fmt.Println(username)
-		fmt.Println(departname)
-		fmt.Println(created)
+		fmt.Println(Userid)
+		fmt.Println(Username)
+		fmt.Println(Departname)
+		fmt.Println(Created)
 	}
 }

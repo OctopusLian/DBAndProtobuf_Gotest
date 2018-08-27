@@ -11,6 +11,8 @@ var(
 	dbname = "userif"  //数据库表名
 )
 
+
+
 func main() {
 	var i int
 	for{
@@ -18,18 +20,18 @@ func main() {
 
 		fmt.Println("请输入序号")
 		fmt.Scan(&i)
-		var userid int
+		//var userid int
 		switch i {
 		case 1:
 			DBManger.DBstart()
 		case 2:
 			DBManger.DBinsert()
 		case 3:
-			DBManger.DBselect(userid)
+			DBManger.DBselect()
 		case 4:
-			DBManger.DBupdate(userid)
+			DBManger.DBupdate(DBManger.Userid)
 		case 5:
-			DBManger.DBdelete(userid)
+			DBManger.DBdelete(DBManger.Userid)
 		case 6:
 			DBManger.DBclose()
 		}

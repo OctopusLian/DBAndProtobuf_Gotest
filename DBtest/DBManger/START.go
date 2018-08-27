@@ -8,6 +8,9 @@ import (
 
 var db *sql.DB
 
+var Username,Departname,Created string
+var Userid,Id int
+
 func DBstart() {
 	db,_= sql.Open("mysql", "root:123456@tcp(127.0.0.1:3306)/dbtest?charset=utf8") //dbtest为我新建立的数据库名
 
@@ -17,7 +20,7 @@ func DBstart() {
 
 func CheckErr(err error){
 	if err != nil{
-		//panic(err)
-		fmt.Println(err)
+		panic(err)
+		//fmt.Println(err)
 	}
 }
